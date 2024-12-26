@@ -1,0 +1,285 @@
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url(./fonts/SpaceGrotesk-Medium.ttf);
+}
+@font-face {
+    font-family: 'Space Grotesk Bold';
+    src: url(./fonts/SpaceGrotesk-Bold.ttf);
+}
+
+h1 {
+    font-family: "Space Grotesk Bold", sans-serif;
+    font-weight: 500;
+    font-size: 60px;
+}
+
+h1::selection {
+    color: #fff;
+    background-color: black;
+}
+
+h2 {
+    font-family: "Space Grotesk Bold", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+h2::selection {
+    color: #fff;
+    background-color: black;
+}
+
+h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+h3::selection {
+    color: #fff;
+    background-color: black;
+}
+
+h4 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+h4::selection {
+    color: #fff;
+    background-color: black;
+}
+
+h5 {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+h5::selection {
+    color: #fff;
+    background-color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0 5%;
+}
+
+header {
+    margin-bottom: 140px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    
+    margin-top: 2%;
+}
+
+nav .logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 17%;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 60%;
+}
+
+.navElem {
+    font-weight: 400;
+    font-size: 1.5vw;
+    line-height: 140%;
+    font-family: "Space Grotesk", sans-serif;
+
+    color: #000;
+    border-radius: 5px;
+
+    cursor: pointer;
+    list-style: none;
+
+    padding: 2px 5px;
+    position: relative;
+}
+.navElem::after {
+    content: '';
+    position: absolute;
+    height: 0.2vh;
+    left: 5%;
+    bottom: 0;
+    width: 0;
+    background-color: #191a23;
+    transition: width .5s ease-in-out;
+}
+.navElem::selection {
+    color: #fff;
+    background-color: black;
+}
+.navElem:hover::after {
+    width: 91%;
+}
+
+nav ul button {
+    display: flex;
+    align-items: center;
+
+    font-size: 1.5vw;
+    font-family: "Space Grotesk", sans-serif;
+
+    padding: 20px 35px;
+
+    border-radius: 14px;
+    border: 1px solid #191a23;
+    background-color: #00000003;
+
+    transition: .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+nav ul button:hover {
+    color: #fff;
+    background-color: #191a23;
+}
+
+
+
+header .main {
+    margin-top: 6vh;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    height: min-content;
+}
+
+header .main .consultation {
+    width: 47%;
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+header .main .consultation h4 {
+    line-height: 110%;
+}
+
+header .main .consultation button {
+    font-size: 1.5vw;
+    text-align: center;
+    font-family: "Space Grotesk", sans-serif;
+
+    color: #fff;
+    padding: 20px 35px;
+
+    width: max-content;
+    border-radius: 14px;
+    background-color: #191a23;
+
+    transition: .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+header .main .consultation button:hover {
+    color: #191a23;
+    background-color: #fff;
+}
+
+header .sponsors {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .sponsors svg {
+    filter: brightness(0);
+}
+
+
+
+
+main .services .subtext {
+    width: 78%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 80px;
+}
+
+main .services .subtext h2 {
+    width: max-content;
+    border-radius: 8px;
+    padding: 8px 4px 4px 4px;
+    background-color: #B9FF66;
+}
+main .services .subtext h2::selection {
+    color: #B9FF66;
+    background-color: #000;
+}
+
+main .services .subtext h4 {
+    width: 80%;
+}
+
+main .services ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    list-style: none;
+}
+
+main .services ul li {
+    padding: 50px;
+
+    border-radius: 45px;
+    background-color: #B9FF66;
+}
+
+main .services ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .services ul li .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+main .services ul li h3 {
+    margin: 0;
+    /* Скидаємо всі зовнішні відступи */
+    padding: 0;
+    display: flex;
+    /* Якщо необхідна адаптивність */
+    align-items: flex-start;
+}
+
+main .services ul li h3 span {
+    background-color: #fff;
+    /* Фон для тексту */
+    border-radius: 5px;
+    /* Закруглені кути */
+    padding: 4px 6px;
+    /* Відступи */
+    display: inline;
+    /* Фон обмежується текстом */
+    box-decoration-break: clone;
+    /* Для багаторядкового тексту */
+    -webkit-box-decoration-break: clone;
+    /* Для Safari */
+    line-height: 1.2;
+    /* Контроль висоти рядка */
+    white-space: normal;
+    /* Дозволяє перенос тексту */
+}
