@@ -1,4 +1,12 @@
 @font-face {
+    font-family: 'Space Grotesk Regular';
+    src: url(./fonts/SpaceGrotesk-Regular.ttf);
+}
+@font-face {
+    font-family: 'Space Grotesk light';
+    src: url(./fonts/SpaceGrotesk-Light.ttf);
+}
+@font-face {
     font-family: 'Space Grotesk';
     src: url(./fonts/SpaceGrotesk-Medium.ttf);
 }
@@ -51,15 +59,77 @@ h4::selection {
     background-color: black;
 }
 
-h5 {
+p {
     font-family: "Space Grotesk", sans-serif;
     font-weight: 400;
     font-size: 18px;
 }
 
-h5::selection {
+p::selection {
     color: #fff;
     background-color: black;
+}
+
+.green-back {
+    color: #000;
+    background-color: #B9FF66;
+    span {
+        background-color: #fff;
+    }
+
+    p {
+        color: #000;
+    }
+}
+
+.white-back {
+    color: #000;
+    background-color: #f3f3f3 !important;
+
+    span {
+        background-color: #B9FF66 !important;
+    }
+
+    span::selection {
+        color: #B9FF66 !important;
+    }
+
+    p {
+        color: #000;
+    }
+
+    p::selection {
+        color: #f3f3f3 !important;
+        background-color: #191A23 !important;
+    }
+}
+
+.black-back {
+    color: #191A23;
+    background-color: #191A23 !important;
+    box-shadow: 0 3px 0 1px #53722e,
+                0 -.5px 0 1px #53722e !important;
+    span {
+        background-color: #f3f3f3 !important;
+    }
+
+    span::selection {
+        color: #f3f3f3 !important;
+        background-color: #191A23 !important;
+    }
+
+    p {
+        color: #f3f3f3;
+    }
+    p::selection {
+        color: #191A23 !important;
+        background-color: #f3f3f3 !important;
+    }
+    
+}
+.black-back:hover {
+    box-shadow: 0 8px 0 1px #53722e,
+                0 -.5px 0 1px #53722e !important;
 }
 
 * {
@@ -234,7 +304,7 @@ main .services .subtext h4 {
 main .services ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1em;
+    grid-gap: 2em;
     list-style: none;
 }
 
@@ -243,6 +313,17 @@ main .services ul li {
 
     border-radius: 45px;
     background-color: #B9FF66;
+    box-shadow: 0 3px 0 1px #191A23,
+                0 -.5px 0 1px #191A23;
+    transition: .75s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    z-index: 1;
+}
+
+main .services ul li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 0 1px #191A23,
+                0 -.5px 0 1px #191A23;
+    z-index: 2;
 }
 
 main .services ul li {
@@ -255,31 +336,61 @@ main .services ul li .left-side {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    width: 70%;
 }
 main .services ul li h3 {
     margin: 0;
-    /* Скидаємо всі зовнішні відступи */
     padding: 0;
     display: flex;
-    /* Якщо необхідна адаптивність */
+    flex-direction: column;
     align-items: flex-start;
 }
 
-main .services ul li h3 span {
-    background-color: #fff;
-    /* Фон для тексту */
+main .services .left-side h3 span {
+    background: #fff;
     border-radius: 5px;
-    /* Закруглені кути */
-    padding: 4px 6px;
-    /* Відступи */
-    display: inline;
-    /* Фон обмежується текстом */
-    box-decoration-break: clone;
-    /* Для багаторядкового тексту */
-    -webkit-box-decoration-break: clone;
-    /* Для Safari */
     line-height: 1.2;
-    /* Контроль висоти рядка */
-    white-space: normal;
-    /* Дозволяє перенос тексту */
+    font-size: 30px;
+
+    display: block;
+    
+    padding: 5px 5px 2px 5px;
+}
+
+main .services .left-side h3 span::selection {
+    background-color: black;
+    color: #fff;
+}
+
+main .services .left-side .more {
+    width: 65%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .services .left-side .more button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 41px;
+    height: 41px;
+    border: none;
+    cursor: pointer;
+    background-color: #00000000;
+    outline: none;
+}
+
+
+main .services .left-side .more p {
+    font-family: "Space Grotesk Regular", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+main .services ul li .left-side .more p::selection {
+    background-color: black;
+    color: #B9FF66;
 }
