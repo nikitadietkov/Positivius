@@ -60,9 +60,10 @@ h4::selection {
 }
 
 p {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Space Grotesk Regular", sans-serif;
     font-weight: 400;
     font-size: 18px;
+    line-height: 1.15;
 }
 
 p::selection {
@@ -70,7 +71,12 @@ p::selection {
     background-color: black;
 }
 
+a {
+    text-decoration: none;
+}
+
 .green-back {
+    padding: 0 8px;
     color: #000;
     background-color: #B9FF66;
     span {
@@ -130,6 +136,21 @@ p::selection {
 .black-back:hover {
     box-shadow: 0 8px 0 1px #53722e,
                 0 -.5px 0 1px #53722e !important;
+}
+
+.green-head {
+    width: max-content;
+    border-radius: 8px;
+    padding: 8px 4px 4px 4px;
+    background-color: #B9FF66;
+}
+.green-head::selection {
+    color: #B9FF66;
+    background-color: #000;
+}
+
+.open-content-active {
+    background-color: #B9FF66;
 }
 
 * {
@@ -197,7 +218,7 @@ nav ul {
     background-color: black;
 }
 .navElem:hover::after {
-    width: 91%;
+    width: 92%;
 }
 
 nav ul button {
@@ -219,7 +240,10 @@ nav ul button:hover {
     color: #fff;
     background-color: #191a23;
 }
-
+nav ul button span::selection {
+    color: #191A23;
+    background-color: #fff;
+}
 
 
 header .main {
@@ -263,6 +287,10 @@ header .main .consultation button:hover {
     color: #191a23;
     background-color: #fff;
 }
+header .main .consultation button span::selection {
+    color: #fff;
+    background-color: #191A23;
+}
 
 header .sponsors {
     display: flex;
@@ -276,28 +304,17 @@ header .sponsors svg {
 
 
 
-main .services .subtext {
+.subtext {
     width: 78%;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     margin-bottom: 80px;
 }
 
-main .services .subtext h2 {
-    width: max-content;
-    border-radius: 8px;
-    padding: 8px 4px 4px 4px;
-    background-color: #B9FF66;
-}
-main .services .subtext h2::selection {
-    color: #B9FF66;
-    background-color: #000;
-}
-
-main .services .subtext h4 {
+.subtext p {
+    margin-left: 40px;
     width: 80%;
 }
 
@@ -394,3 +411,247 @@ main .services ul li .left-side .more p::selection {
     background-color: black;
     color: #B9FF66;
 }
+
+
+
+.letMakeThat {
+    margin: 100px 0 140px 0;
+    padding: 23.5px 0;
+}
+
+.letMakeThat .parent .child {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    border-radius: 45px;
+    background-color: #F3F3F3;
+}
+.letMakeThat .parent .child::after {
+    content: '';
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    bottom: 0;
+
+    opacity: 0.1;
+    pointer-events: auto;
+    border-radius: 45px;
+    border: 1px #000 dashed;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 20px black;
+
+    transition: opacity 0.5s ease-in-out;
+}
+
+.letMakeThat .parent .child:hover::after {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.letMakeThat .left-side {
+    max-width: 40%;
+    
+    margin: 60px;
+
+    display: flex;
+    flex-direction: column;
+}
+.letMakeThat .left-side * {
+    padding: 13px 0;
+}
+
+.letMakeThat .left-side button {
+    display: flex;
+    align-items: center;
+
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.1;
+    font-family: "Space Grotesk Regular", sans-serif;
+
+    width: max-content;
+    padding: 10px 15px;
+
+    border-radius: 14px;
+    border: 1px solid #191a23;
+    background-color: #191a23;
+    
+    transition: .45s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}   
+.letMakeThat div button:hover {
+    color: #191A23;
+    background-color: #00000003;
+}
+
+.letMakeThat .parent .child button span::selection {
+    color: #fff;
+    background-color: #191A23;
+
+    transition: .4s;
+}
+
+.letMakeThat div svg {
+    height: 395;
+    width: 356px;
+    position: absolute;
+    left: 60%;
+    transform: translateY(-7%);
+}
+
+
+
+
+.case-studies .main {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 70px 60px;
+    margin-bottom: 140px;
+
+    border-radius: 45px;
+    background-color: #191A23;
+
+
+
+    p {
+        color: white;
+    } 
+    p::selection {
+        color: #191A23;
+        background-color: white;
+    }
+}
+
+.case-studies .main .block {
+    width: 30%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}
+.case-studies .mani .block-border {
+    position: relative;
+}
+.case-studies .main .block-border::after {
+    content: '';
+    position: absolute;
+
+    width: 2px;
+    height: 30%;
+
+    transform: translateX(-45px);
+    background-color: #ffffff;
+}
+.case-studies .main .block-border::before {
+    content: '';
+    position: absolute;
+
+    width: 2px;
+    height: 30%;
+
+    transform: translateX(368px);
+    background-color: #ffffff;
+}
+
+.case-studies .main .block .more {
+    width: 55%;
+    margin-top: 15px;
+
+    display: flex;
+
+    color: #B9FF66;
+    button {
+        margin-left: 15px;
+
+        border: none;
+        background-color: #00000000;
+    }
+}
+
+.case-studies .main .block .more p {
+    position: relative;
+    transition: .5s ease-in-out;
+}
+.case-studies .main .block .more p:hover {
+    color: #B9FF66;
+}
+.case-studies .main .block .more p::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background-color: #f3f3f3;
+    transition: width .5s ease-in-out;
+}
+.case-studies .main .block .more p:hover::after {
+    width: 122%;
+}
+
+
+
+.work-procces .main .block {
+    margin-bottom: 30px;
+    padding: 41px 60px;
+
+    border-radius: 45px;
+    background-color: #F3F3F3;
+    border: .5px solid #191A23;
+    box-shadow: 0 5px 0 0 #191A23;
+}
+
+.work-procces .main .block .text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.work-procces .main .block .text div {
+    display: flex;
+    align-items: center;
+        transform: translateY(5px);
+    h3 {
+        margin-left: 19.5px;
+    }
+}
+
+.work-procces .main .block .text .open-content {
+    width: 58px;
+    height: 58px;
+    position: relative;
+
+    border: 1px solid #191A23;
+    border-radius: 50%;
+    background-color: #F3F3F3;
+}
+.work-procces .main .block .text .open-content::after {
+    content: '';
+    position: absolute;
+
+    top: 45%;
+    right: 30%;
+
+    width: 40%;
+    height: 10%;
+    background-color: #191A23;
+}
+.work-procces .main .block .text .open-content::before {
+    content: '';
+    position: absolute;
+
+    top: 30%;
+    right: 45%;
+
+    width: 10%;
+    height: 40%;
+    background-color: #191A23;
+}
+
