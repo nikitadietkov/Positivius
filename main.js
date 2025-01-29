@@ -28,12 +28,17 @@ document.querySelectorAll('.letMakeThat .parent .child').forEach((child) => {
 });
 
 $(document).ready(function () {
-    $("#slide-elem").slideToggle();
-
+    $(".work-block p").hide();
     $(".open-content").click(function () {
-        $("#slide-elem").slideToggle(400);
-        $(".work-block").toggleClass("open-content-active");
-        console.log($(".work-block"))
-        
+        // $("#slide-elem").slideToggle(500);
+        // $(".work-block").toggleClass("open-content-active");
+        const parentBlock = $(this).closest('.work-block');
+        const content = parentBlock.find('#slide-elem');
+
+        $(".work-block").not(parentBlock).removeClass("open-content-active");
+        $(".work-block p").not(content).slideUp(300);
+
+        content.slideToggle(300);
+        parentBlock.toggleClass("open-content-active");
     });
 });
