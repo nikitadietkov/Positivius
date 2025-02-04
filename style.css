@@ -331,8 +331,9 @@ header .sponsors svg {
 
 main .services ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+
     list-style: none;
 }
 
@@ -364,38 +365,39 @@ main .services ul li .left-side {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+
     width: 70%;
 }
 main .services ul li h3 {
     margin: 0;
     padding: 0;
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
 main .services .left-side h3 span {
-    background: #fff;
-    border-radius: 5px;
-    line-height: 1.2;
-    font-size: 30px;
-
     display: block;
-    
+
+    font-size: 30px;
+    line-height: 1.2;
+    border-radius: 5px;
+    background: #fff;
+
     padding: 5px 5px 2px 5px;
 }
 
 main .services .left-side h3 span::selection {
-    background-color: black;
     color: #fff;
+    background-color: black;
 }
 
 main .services .left-side .more {
-    width: 65%;
-    
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    width: max-content;
 }
 
 main .services .left-side .more button {
@@ -405,17 +407,19 @@ main .services .left-side .more button {
 
     width: 41px;
     height: 41px;
+    margin-right: 15px;
+
     border: none;
+    outline: none;
     cursor: pointer;
     background-color: #00000000;
-    outline: none;
 }
 
 
-main .services .left-side .more p {
-    font-family: "Space Grotesk Regular", sans-serif;
-    font-weight: 500;
+main .services .left-side .more p {    
     font-size: 20px;
+    font-weight: 500;
+    font-family: "Space Grotesk Regular", sans-serif;
 }
 
 main .services ul li .left-side .more p::selection {
@@ -520,7 +524,6 @@ main .services ul li .left-side .more p::selection {
 
 .case-studies .main {
     display: flex;
-    justify-content: space-between;
 
     padding: 70px 60px;
     margin-bottom: 140px;
@@ -546,33 +549,17 @@ main .services ul li .left-side .more p::selection {
     flex-direction: column;
     justify-content: space-between;   
 }
-.case-studies .mani .block-border {
-    position: relative;
-}
-.case-studies .main .block-border::after {
-    content: '';
-    position: absolute;
-
-    width: 2px;
-    height: 30%;
-
-    transform: translateX(-45px);
-    background-color: #ffffff;
-}
-.case-studies .main .block-border::before {
-    content: '';
-    position: absolute;
-
-    width: 2px;
-    height: 30%;
-
-    transform: translateX(368px);
-    background-color: #ffffff;
+.case-studies .main .block-border {
+    margin: 0 64px;
+    padding: 0 64px;
+    border-left: 2px solid #f3f3f3;
+    border-right: 2px solid #f3f3f3;
 }
 
 .case-studies .main .block .more {
-    width: 55%;
-    margin-top: 15px;
+    position: relative;
+    width: min-content;
+    margin-top: 20px;
 
     display: flex;
 
@@ -586,13 +573,17 @@ main .services ul li .left-side .more p::selection {
 }
 
 .case-studies .main .block .more p {
-    position: relative;
+    width: max-content;
+    cursor: pointer;
     transition: .5s ease-in-out;
+}
+.case-studies .main .block .more svg {
+    cursor: pointer;
 }
 .case-studies .main .block .more p:hover {
     color: #B9FF66;
 }
-.case-studies .main .block .more p::after {
+.case-studies .main .block .more::after {
     content: '';
     position: absolute;
     height: 1px;
@@ -602,8 +593,8 @@ main .services ul li .left-side .more p::selection {
     background-color: #f3f3f3;
     transition: width .5s ease-in-out;
 }
-.case-studies .main .block .more p:hover::after {
-    width: 122%;
+.case-studies .main .block .more:hover::after {
+    width: 100%;
 }
 
 
@@ -661,11 +652,24 @@ main .services ul li .left-side .more p::selection {
     content: '';
     position: absolute;
 
-    top: 30%;
+    bottom: 30%;
     right: 45%;
 
     width: 10%;
     height: 40%;
+    background-color: #191A23;
+    transition: .3s ease-in-out;
+}
+
+.close-plus::before {
+    content: '';
+    position: absolute;
+
+    bottom: 30%;
+    right: 45%;
+
+    width: 10%;
+    height: 0% !important;
     background-color: #191A23;
 }
 

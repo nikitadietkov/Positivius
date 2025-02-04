@@ -30,15 +30,15 @@ document.querySelectorAll('.letMakeThat .parent .child').forEach((child) => {
 $(document).ready(function () {
     $(".work-block p").hide();
     $(".open-content").click(function () {
-        // $("#slide-elem").slideToggle(500);
-        // $(".work-block").toggleClass("open-content-active");
         const parentBlock = $(this).closest('.work-block');
         const content = parentBlock.find('#slide-elem');
 
+        $(".open-content").not($(this).closest(".open-content")).removeClass("close-plus");
         $(".work-block").not(parentBlock).removeClass("open-content-active");
         $(".work-block p").not(content).slideUp(300);
 
         content.slideToggle(300);
+        $(this).closest(".open-content").toggleClass("close-plus");
         parentBlock.toggleClass("open-content-active");
     });
 });
