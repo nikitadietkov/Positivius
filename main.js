@@ -29,7 +29,14 @@ document.querySelectorAll('.letMakeThat .parent .child').forEach((child) => {
 
 $(document).ready(function () {
     $(".work-block p").hide();
-    $(".open-content").click(function () {
+
+    $(".work-block").click(function () {
+        openContent.call(this);
+    });
+
+
+
+    function openContent() {
         const parentBlock = $(this).closest('.work-block');
         const content = parentBlock.find('#slide-elem');
 
@@ -37,8 +44,7 @@ $(document).ready(function () {
         $(".work-block").not(parentBlock).removeClass("open-content-active");
         $(".work-block p").not(content).slideUp(300);
 
-        content.slideToggle(300);
-        $(this).closest(".open-content").toggleClass("close-plus");
+        content.slideToggle(300);        
         parentBlock.toggleClass("open-content-active");
-    });
+    }
 });
